@@ -15,7 +15,7 @@
   <p class="show_email">This email already exist please login to continue</p>
 {% endif %}
   <div class="signup-container">
-    <h2>Create Account</h2>
+    <h2>Login to your account!</h2>
     <form method="POST">
       {% csrf_token %}
       <div class="form-group">
@@ -34,8 +34,13 @@
       </div>
 
       <button type="submit">Login</button>
-
+       
       
+      
+      
+      
+      <div class="login-link" >Do not have an account 
+        <a href="{% url 'signup' %}">Sign Up</a> to continue
       
       </div>
     </form>

@@ -9,7 +9,7 @@ def Home(request):
     username = request.POST.get("username")
     if Login.objects.filter(email=email).exists():
       print("User already exists")
-      return render(request, "index.html", {"email": email})
+      return render(request, "signup.html", {"email": email})
     if email and password and username:
       login=Login(email=email,password=password)
       login.save()  
@@ -17,9 +17,10 @@ def Home(request):
     else:
     
      error_message = "Please fill all the required fields"
-     return render(request, "index.html", {'error_message': error_message})
+     return render(request, "signup.html", {'error_message': error_message})
 
-  return render(request, "index.html")
+  return render(request, "signup.html")
 def login(request):
   return render(request,"login.html")
-  
+def signup(request):
+  return render(request,"signup.html")
