@@ -81,6 +81,7 @@ body {
        top : 0;
        left : -90; 
        right : 500px;
+       text-align : center;
     }
     .show_email{
        color : green;

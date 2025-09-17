@@ -1,1 +1,81 @@
-<h1>Welcome you have logged in Successfully!!!</h1>
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Category Page</title>
+    <link rel="stylesheet" href="{% static 'category.css' %}"> 
+</head>
+<body>
+  {% if uname  %}
+  <p>You have logged in as {{uname}}</p>
+  {% endif %}
+  <h1>Our Categories</h1>
+
+
+  <div class="category-container">
+    <div class="category-card">
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+        alt="Technology"
+        class="category-image"
+      />
+      <div class="category-content">
+        <h2 class="category-title">HouseHold</h2>
+        <p class="category-description">
+          Latest news and insights about technology, gadgets, and software trends.
+        </p>
+        <a href="#" class="category-link">Explore</a>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <img
+        src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=400&q=80"
+        alt="Travel"
+        class="category-image"
+      />
+      <div class="category-content">
+        <h2 class="category-title">Personal Care</h2>
+        <p class="category-description">
+          Discover exciting destinations, travel tips, and cultural experiences.
+        </p>
+        <a href="#" class="category-link">Explore</a>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=400&q=80"
+        alt="Food"
+        class="category-image"
+      />
+      <div class="category-content">
+        <h2 class="category-title">Food</h2>
+        <p class="category-description">
+          Recipes, cooking tips, and culinary delights from around the world.
+        </p>
+        <a href="#" class="category-link">Explore</a>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <img
+        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80"
+        alt="Health"
+        class="category-image"
+      />
+      <div class="category-content">
+        <h2 class="category-title">Health Care</h2>
+        <p class="category-description">
+          Wellness advice, fitness guides, and mental health resources.
+        </p>
+        <a href="#" class="category-link">Explore</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
