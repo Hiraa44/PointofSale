@@ -9,22 +9,19 @@
     <link rel="stylesheet" href="{% static 'category.css' %}"> 
 </head>
 <body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Services</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
   {% if uname  %}
   <p>You have logged in as {{uname}}</p>
   {% endif %}
   <h1>Our Categories</h1>
-      <header>
-        <div class="container">
-            <h1 class="site-title">Our Products</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
 
   <div class="category-container">
     <div class="category-card">

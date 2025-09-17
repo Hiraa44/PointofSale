@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Signup, Product
+from django.contrib.auth import authenticate,login
 import requests
 # Create your views here.
 def Home(request):
@@ -7,12 +8,14 @@ def Home(request):
     email = request.POST.get("email")
     password = request.POST.get("password")
     username = request.POST.get("username")
+    request.Signup.authenticate()
     if Signup.objects.filter(email=email).exists():
       print("User already exists")
       return render(request, "signup.html", {"email": email})
     if email and password and username:
       signup=Signup(email=email,password=password, username=username)
       signup.save()  
+      user = authenticate(request, username=username, password=password)
       return render(request,'home.html')
     else:
      error_message = "Please fill all the required fields"
@@ -22,7 +25,10 @@ def Home(request):
 def login(request):
   if request.method == 'POST':
     username = request.POST.get("username")
+    password = request.POST.get("password")
     if Signup.objects.filter(username=username).exists():
+     user = authenticate(request, username=username, password=password)
+     print("This is the", user)
      return render(request, "home.html",{"uname": username})
     else:
      error = "User does not exist with this"
