@@ -13,7 +13,18 @@
   <p>You have logged in as {{uname}}</p>
   {% endif %}
   <h1>Our Categories</h1>
-
+      <header>
+        <div class="container">
+            <h1 class="site-title">Our Products</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
   <div class="category-container">
     <div class="category-card">
@@ -57,7 +68,7 @@
         <p class="category-description">
           Recipes, cooking tips, and culinary delights from around the world.
         </p>
-        <a href="#" class="category-link">Explore</a>
+        <a href="{% url 'FProducts' %}" class="category-link">Explore</a>
       </div>
     </div>
 

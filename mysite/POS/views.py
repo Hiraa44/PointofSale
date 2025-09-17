@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Signup
+from .models import Signup, Product
 import requests
 # Create your views here.
 def Home(request):
@@ -30,3 +30,7 @@ def login(request):
   return render(request,"login.html")
 def signup(request):
   return render(request,"signup.html")
+def FProducts(request):
+  product = Product.objects.all()
+  print(product)
+  return render(request, 'FoodProducts.html')
