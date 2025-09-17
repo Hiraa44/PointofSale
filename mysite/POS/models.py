@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=50)
-    price= models.DecimalField(max_digits=4, decimal_places=3)
+    price= models.DecimalField(max_digits=4, decimal_places=2)
     availability = models.BooleanField(default=True)
     created_at = models.DateField(auto_now_add=True)
 
