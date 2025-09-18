@@ -132,3 +132,22 @@ TAILWIND_APP_NAME = 'theme1'
 
 NPM_BIN_PATH = r"C:/Program Files/nodejs/npm.cmd"
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/django.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
