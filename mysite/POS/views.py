@@ -8,7 +8,7 @@ def Home(request):
     email = request.POST.get("email")
     password = request.POST.get("password")
     username = request.POST.get("username")
-    request.Signup.authenticate()
+   
     if Signup.objects.filter(email=email).exists():
       print("User already exists")
       return render(request, "signup.html", {"email": email})
