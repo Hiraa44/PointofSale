@@ -26,10 +26,13 @@ def login(request):
   if request.method == 'POST':
     username = request.POST.get("username")
     password = request.POST.get("password")
-    if Signup.objects.filter(username=username).exists():
+    if Signup.objects.filter(username=username, password=password).exists():
      user = authenticate(request, username=username, password=password)
      print("This is the", user)
      return render(request, "home.html",{"uname": username})
+    if not username or not password:
+      err = "Username & Password cannot be empty"
+      return render(request, "login.html", {"error":err})
     else:
      error = "User does not exist with this"
      return render(request,"login.html", {'login_error' : error, "uname": username} )
@@ -39,4 +42,6 @@ def signup(request):
 def FProducts(request):
   product = Product.objects.all()
   print(product)
-  return render(request, 'FoodProducts.html')
+  return render(request, 'FoodProducts.html', { "products" : product})
+def logout(request):
+  return render(request, "login.html")
