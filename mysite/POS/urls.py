@@ -23,7 +23,7 @@ urlpatterns = [
     #path('', include('POS.urls'))
     path('/', views.Home, name="Home"),
     path('login/', views.login, name="login"),
-    path('signup/', views.signup, name="signup"),
+    path('signup/', views.Home, name="Home"),
     path('foodProducts/', views.FProducts, name="FProducts")
     
 ]
